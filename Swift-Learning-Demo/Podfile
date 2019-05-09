@@ -1,0 +1,11 @@
+platform :ios, '8.0'
+
+use_frameworks!
+
+abstract_target 'xxxx' do
+    
+    pod 'ObjectMapper'
+    
+    target 'Swift-Learning-Demo'
+    target 'Swift-Learning-DemoTests'
+end
