@@ -22,6 +22,28 @@ class Swift_Learning_DemoTests: XCTestCase {
     func testExample() {
         ObjTest().showInfo()
     }
+    
+    //MARK: - JOSN和数组互转
+    func testJSONToArray() {
+        let jsonData = dataForJson(fileName: "Array.json")
+        let jsonStr = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)
+        let arr = getArrayFromJSONString(jsonString: jsonStr! as String)
+        print("json转数组 :\(arr)")
+        
+        let newJson = getJSONStringFromArray(array: arr as NSArray)
+        print("数组转json :\(newJson)")
+    }
+    
+    //MARK: - JOSN和字典互转
+    func testJSONToDic() {
+        let jsonData = dataForJson(fileName: "Dictionary.json")
+        let jsonStr = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)
+        let dic = getDictionaryFromJSONString(jsonString: jsonStr! as String)
+        print("json转字典 :\(dic)")
+        
+        let newJson = getJSONStringFromDictionary(dictionary: dic as NSDictionary)
+        print("字典转json :\(newJson)")
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.

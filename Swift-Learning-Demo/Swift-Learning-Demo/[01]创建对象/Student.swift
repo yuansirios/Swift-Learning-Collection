@@ -15,4 +15,9 @@ class Student: People {
         score = 98.0
         super.init()
     }
+    
+    override func subInfo() -> String {
+        super.subInfo()
+        return "name:\(name) + age:\(age) + score:\(score)"
+    }
 }

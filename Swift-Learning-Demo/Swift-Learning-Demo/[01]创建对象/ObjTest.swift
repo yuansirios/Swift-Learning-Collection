@@ -22,5 +22,6 @@ class ObjTest{
     
     func showInfo(){
         print(people.subInfo())
+        print(student.subInfo())
     }
 }

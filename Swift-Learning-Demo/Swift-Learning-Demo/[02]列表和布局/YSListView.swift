@@ -28,8 +28,23 @@ struct YSListModel :Mappable {
 
 private let cellIdentifier = "cellIdentifier"
 
+//声明代理协议
+protocol YSListViewDelegate {
+    //代理方法
+    func turnToLayoutView()
+}
+
 class YSListView : UIView,UITableViewDelegate,UITableViewDataSource{
     
+    //代理属性
+    public var delegate:YSListViewDelegate?
+    
+    //定义block
+    typealias turnToLayoutViewBlock = () ->()
+    //创建block变量
+    var layoutBlock:turnToLayoutViewBlock!
+    
+    //MARK:- 初始化
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -41,15 +56,15 @@ class YSListView : UIView,UITableViewDelegate,UITableViewDataSource{
     
     //MARK:- 懒加载
     lazy var dataArr : NSArray = {
-        let jsonData = dataForJson(fileName: "YSList.json")
-        
-        var dicArr = try! JSONSerialization.jsonObject(with: jsonData as Data, options: .allowFragments) as! [[String:AnyObject]]
+        let jsonData = dataForJson(fileName: "Array.json")
+        let jsonStr = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)
+        let dicArr = getArrayFromJSONString(jsonString: jsonStr! as String)
+    
         print("打印所有数据:\(dicArr)")
         
         var modelArr = [YSListModel]()
-        
         for var item in dicArr{
-            let model =  Mapper<YSListModel>().map(JSON: item as [String : Any])
+            let model =  Mapper<YSListModel>().map(JSON: item as! [String : Any])
             modelArr.append(model!)
         }
         return modelArr as NSArray
@@ -60,7 +75,6 @@ class YSListView : UIView,UITableViewDelegate,UITableViewDataSource{
         table.delegate = self;
         table.dataSource = self;
         table.tableFooterView = UIView()
-        table.register(YSTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         return table
     }()
     
@@ -71,17 +85,66 @@ class YSListView : UIView,UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! YSTableViewCell
+        
+        var cell: YSTableViewCell? = nil
+    
+        if cell != nil {
+            cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? YSTableViewCell
+        }else{
+            cell = YSTableViewCell.init(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: cellIdentifier)
+        }
         
         let model = self.dataArr[indexPath.row] as? YSListModel
-        cell.model = model
-        cell.textLabel?.text = model?.title
-        return cell
+        cell?.model = model
+        cell?.textLabel?.text = model?.title
+        cell?.detailTextLabel?.text = model?.subTitle
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let model = self.dataArr[indexPath.row] as? YSListModel
-        print("点击了:\(model?.title)")
+        let selector = Selector(model!.event)
+        
+        if self.responds(to:selector) {
+            self.perform(selector)
+        }else{
+            print("\(selector.description)方法不存在！！！")
+        }
+    }
+    
+    //MARK: - EventList
+    
+    // 函数前必须加 @objc关键字
+    @objc func event() {
+        ObjTest().showInfo()
+    }
+    
+    @objc func event2() {
+        let jsonData = dataForJson(fileName: "Array.json")
+        let jsonStr = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)
+        let arr = getArrayFromJSONString(jsonString: jsonStr! as String)
+        print("json转数组 :\(arr)")
+        
+        let arrJson = getJSONStringFromArray(array: arr as NSArray)
+        print("数组转json :\(arrJson)")
+        
+        let jsonData2 = dataForJson(fileName: "Dictionary.json")
+        let jsonStr2 = NSString(data: jsonData2 as Data, encoding: String.Encoding.utf8.rawValue)
+        let dic = getDictionaryFromJSONString(jsonString: jsonStr2! as String)
+        print("json转字典 :\(dic)")
+        
+        let dicJson = getJSONStringFromDictionary(dictionary: dic as NSDictionary)
+        print("字典转json :\(dicJson)")
+    }
+    
+    @objc func event3(){
+        if delegate != nil {
+            delegate?.turnToLayoutView()
+        }
+        
+        if let _ = layoutBlock{
+            layoutBlock()
+        }
     }
 }

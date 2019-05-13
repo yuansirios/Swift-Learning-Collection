@@ -5,7 +5,14 @@ use_frameworks!
 abstract_target 'xxxx' do
     
     pod 'ObjectMapper'
+    pod 'SnapKit'
     
-    target 'Swift-Learning-Demo'
-    target 'Swift-Learning-DemoTests'
+    target 'Swift-Learning-Demo' do
+        
+    end
+
+    target 'Swift-Learning-DemoTests' do
+        
+    end
+    
 end
