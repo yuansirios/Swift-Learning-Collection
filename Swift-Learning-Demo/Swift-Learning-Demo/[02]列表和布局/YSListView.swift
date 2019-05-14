@@ -147,4 +147,10 @@ class YSListView : UIView,UITableViewDelegate,UITableViewDataSource{
             layoutBlock()
         }
     }
+    
+    @objc func event4(){
+//        YSNetwork().testGetRequest()
+//        YSNetwork().testPostRequest()
+        YSNetwork().testUploadFile()
+    }
 }

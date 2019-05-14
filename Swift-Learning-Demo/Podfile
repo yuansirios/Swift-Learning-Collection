@@ -6,6 +6,7 @@ abstract_target 'xxxx' do
     
     pod 'ObjectMapper'
     pod 'SnapKit'
+    pod 'Alamofire'
     
     target 'Swift-Learning-Demo' do
         
