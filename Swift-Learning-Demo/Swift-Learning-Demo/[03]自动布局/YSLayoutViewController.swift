@@ -19,7 +19,7 @@ class YSLayoutViewController: UIViewController {
     
     let scrollView:UIScrollView = {
         let view = UIScrollView()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.cyan
         return view
     }()
     
@@ -171,43 +171,47 @@ class YSLayoutViewController: UIViewController {
            super.updateViewConstraints()
        }
        
-       func constraints() {
-           scrollView.snp_makeConstraints { (maker) in
-               maker.edges.equalToSuperview()
-           }
-           
-           blackView.snp_makeConstraints { (maker) in
-               maker.centerX.equalTo(view.snp_centerX)
-               maker.centerY.equalTo(view.snp_centerY).offset(-50)
-               self.updateConstraint = maker.width.height.equalTo(blackW).constraint
-           }
-            
-            whiteView.snp_makeConstraints { (maker) in
-                maker.edges.equalToSuperview().inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
-            }
-           
-           redView.snp_makeConstraints { (maker) in
-               maker.left.greaterThanOrEqualTo(view)
-               maker.top.equalTo(blackView.snp_bottom).offset(20)
-               maker.size.equalTo(CGSize.init(width: 100, height: 100))
-           }
-           
-           yellowView.snp_makeConstraints { (maker) in
-               maker.right.greaterThanOrEqualTo(view)
-               maker.top.equalTo(blackView.snp_bottom).offset(20)
-               maker.size.equalTo(CGSize.init(width: 100, height: 100))
-           }
-           
-           blueView.snp_makeConstraints { (maker) in
-               maker.right.greaterThanOrEqualTo(view)
-               maker.bottom.equalTo(blackView.snp_top).offset(-20)
-               maker.size.equalTo(CGSize.init(width: 100, height: 100))
-           }
-           
-           greenView.snp_makeConstraints { (maker) in
-               maker.left.greaterThanOrEqualTo(view)
-               maker.bottom.equalTo(blackView.snp_top).offset(-20)
-               maker.size.equalTo(CGSize.init(width: 100, height: 100))
-           }
+   func constraints() {
+    
+       scrollView.snp_makeConstraints { (maker) in
+            maker.top.equalTo(topLayoutGuide.snp.bottom)
+            maker.bottom.equalTo(bottomLayoutGuide.snp.top)
+            maker.width.equalTo(view)
+//           maker.edges.equalToSuperview()
        }
+       
+       blackView.snp_makeConstraints { (maker) in
+           maker.centerX.equalTo(view.snp_centerX)
+           maker.centerY.equalTo(view.snp_centerY).offset(-50)
+           self.updateConstraint = maker.width.height.equalTo(blackW).constraint
+       }
+        
+        whiteView.snp_makeConstraints { (maker) in
+            maker.edges.equalToSuperview().inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
+        }
+       
+       redView.snp_makeConstraints { (maker) in
+           maker.left.greaterThanOrEqualTo(view)
+           maker.top.equalTo(blackView.snp_bottom).offset(20)
+           maker.size.equalTo(CGSize.init(width: 100, height: 100))
+       }
+       
+       yellowView.snp_makeConstraints { (maker) in
+           maker.right.greaterThanOrEqualTo(view)
+           maker.top.equalTo(blackView.snp_bottom).offset(20)
+           maker.size.equalTo(CGSize.init(width: 100, height: 100))
+       }
+       
+       blueView.snp_makeConstraints { (maker) in
+           maker.right.greaterThanOrEqualTo(view)
+           maker.bottom.equalTo(blackView.snp_top).offset(-20)
+           maker.size.equalTo(CGSize.init(width: 100, height: 100))
+       }
+       
+       greenView.snp_makeConstraints { (maker) in
+           maker.left.greaterThanOrEqualTo(view)
+           maker.bottom.equalTo(blackView.snp_top).offset(-20)
+           maker.size.equalTo(CGSize.init(width: 100, height: 100))
+       }
+   }
 }
