@@ -11,10 +11,81 @@ import SnapKit
 
 class YSLayoutViewController: UIViewController {
     
-    var redView : UIView!
+    var didSetupConstraints = false
+    
+    // 保存约束（引用约束）
+    var updateConstraint: Constraint?
+    var blackW = 100
+    
+    let scrollView:UIScrollView = {
+        let view = UIScrollView()
+        view.backgroundColor = UIColor.white
+        return view
+    }()
+    
+    
+    let blackView:UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.black
+        return view
+    }()
+    
+    let whiteView:UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        return view
+    }()
+    
+    let redView:UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.red
+        return view
+    }()
+    
+    let yellowView:UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.yellow
+        return view
+    }()
+    
+    let blueView:UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.blue
+        return view
+    }()
+    
+    let greenView:UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.green
+        return view
+    }()
+    
+    deinit {
+        print("\(NSStringFromClass(self.classForCoder))释放了。。。")
+    }
     
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.white
+        
+        scrollView.addSubview(blackView)
+        blackView.addSubview(whiteView)
+        
+        scrollView.addSubview(redView)
+        scrollView.addSubview(yellowView)
+        scrollView.addSubview(blueView)
+        scrollView.addSubview(greenView)
+        view.addSubview(scrollView)
+        
+        view.setNeedsUpdateConstraints()
+        
+        let updateButton = UIButton(type: .custom)
+        updateButton.backgroundColor = UIColor.brown
+        updateButton.frame = CGRect(x: 100, y: 80, width: 50, height: 30)
+        updateButton.setTitle("更新", for: .normal)
+        updateButton.addTarget(self, action: #selector(updateConstraintMethod), for: .touchUpInside)
+        view.addSubview(updateButton)
+        
+        /*
         redView = UIView()
         self.view.addSubview(redView)
         redView.backgroundColor = UIColor.red
@@ -78,13 +149,65 @@ class YSLayoutViewController: UIViewController {
             make.top.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
             make.bottom.equalTo(lineLabel.snp_bottom)
-        }
+        }*/
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        redView.snp.updateConstraints { (make) in
-            make.bottom.equalToSuperview().offset(-50)
+    //MAKR:
+    // 更新约束
+    @objc func updateConstraintMethod() {
+        blackW += 10
+        if blackW > 200 {
+            blackW = 100
         }
+        self.updateConstraint?.update(offset: blackW)   // 更新距离父视图上、左为50
     }
+    
+    //MARK: ********** 布局 ***********
+    override func updateViewConstraints() {
+           if !didSetupConstraints {
+               constraints()
+               didSetupConstraints = true
+           }
+           super.updateViewConstraints()
+       }
+       
+       func constraints() {
+           scrollView.snp_makeConstraints { (maker) in
+               maker.edges.equalToSuperview()
+           }
+           
+           blackView.snp_makeConstraints { (maker) in
+               maker.centerX.equalTo(view.snp_centerX)
+               maker.centerY.equalTo(view.snp_centerY).offset(-50)
+               self.updateConstraint = maker.width.height.equalTo(blackW).constraint
+           }
+            
+            whiteView.snp_makeConstraints { (maker) in
+                maker.edges.equalToSuperview().inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
+            }
+           
+           redView.snp_makeConstraints { (maker) in
+               maker.left.greaterThanOrEqualTo(view)
+               maker.top.equalTo(blackView.snp_bottom).offset(20)
+               maker.size.equalTo(CGSize.init(width: 100, height: 100))
+           }
+           
+           yellowView.snp_makeConstraints { (maker) in
+               maker.right.greaterThanOrEqualTo(view)
+               maker.top.equalTo(blackView.snp_bottom).offset(20)
+               maker.size.equalTo(CGSize.init(width: 100, height: 100))
+           }
+           
+           blueView.snp_makeConstraints { (maker) in
+               maker.right.greaterThanOrEqualTo(view)
+               maker.bottom.equalTo(blackView.snp_top).offset(-20)
+               maker.size.equalTo(CGSize.init(width: 100, height: 100))
+           }
+           
+           greenView.snp_makeConstraints { (maker) in
+               maker.left.greaterThanOrEqualTo(view)
+               maker.bottom.equalTo(blackView.snp_top).offset(-20)
+               maker.size.equalTo(CGSize.init(width: 100, height: 100))
+           }
+       }
 }

@@ -36,6 +36,7 @@ protocol YSListViewDelegate {
 
 class YSListView : UIView,UITableViewDelegate,UITableViewDataSource{
     
+    var didSetupConstraints = false
     //代理属性
     public var delegate:YSListViewDelegate?
     
@@ -54,29 +55,15 @@ class YSListView : UIView,UITableViewDelegate,UITableViewDataSource{
         self.addSubview(self.tableView)
     }
     
-    //MARK:- 懒加载
-    lazy var dataArr : NSArray = {
-        let jsonData = dataForJson(fileName: "Array.json")
-        let jsonStr = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)
-        let dicArr = getArrayFromJSONString(jsonString: jsonStr! as String)
-    
-        print("打印所有数据:\(dicArr)")
-        
-        var modelArr = [YSListModel]()
-        for var item in dicArr{
-            let model =  Mapper<YSListModel>().map(JSON: item as! [String : Any])
-            modelArr.append(model!)
+    override func updateConstraints() {
+        if !didSetupConstraints {
+            tableView.snp_makeConstraints { (maker) in
+                maker.edges.equalToSuperview()
+            }
+            didSetupConstraints = true
         }
-        return modelArr as NSArray
-    }()
-    
-    lazy var tableView : UITableView = {
-        let table = UITableView.init(frame: self.bounds, style:.plain)
-        table.delegate = self;
-        table.dataSource = self;
-        table.tableFooterView = UIView()
-        return table
-    }()
+        super.updateConstraints()
+    }
     
     //MARK:- UITableViewDelegate
     
@@ -153,4 +140,27 @@ class YSListView : UIView,UITableViewDelegate,UITableViewDataSource{
 //        YSNetwork().testPostRequest()
         YSNetwork().testUploadFile()
     }
+    
+    //MARK:- 懒加载
+    lazy var dataArr : NSArray = {
+        let jsonData = dataForJson(fileName: "Array.json")
+        let jsonStr = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)
+        let dicArr = getArrayFromJSONString(jsonString: jsonStr! as String)
+        
+        //数组转模型
+        var modelArr = [YSListModel]()
+        for var item in dicArr{
+            let model =  Mapper<YSListModel>().map(JSON: item as! [String : Any])
+            modelArr.append(model!)
+        }
+        return modelArr as NSArray
+    }()
+    
+    lazy var tableView : UITableView = {
+        let table = UITableView.init()
+        table.delegate = self;
+        table.dataSource = self;
+        table.tableFooterView = UIView()
+        return table
+    }()
 }

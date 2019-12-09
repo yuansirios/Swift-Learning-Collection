@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,7 +30,6 @@
 		1C2D6E7A22851F9E00743129 /* Dictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D6E7922851F9E00743129 /* Dictionary.json */; };
 		1C2D6E7B22851F9E00743129 /* Dictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D6E7922851F9E00743129 /* Dictionary.json */; };
 		1C2D6E7D22893C3100743129 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2D6E7C22893C3100743129 /* ObjectMapper.framework */; };
-		1C2D6E7F22893C3100743129 /* Pods_xxxx_Swift_Learning_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2D6E7E22893C3100743129 /* Pods_xxxx_Swift_Learning_Demo.framework */; };
 		1C2D6E8122893C3100743129 /* Pods_xxxx_Swift_Learning_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2D6E8022893C3100743129 /* Pods_xxxx_Swift_Learning_DemoTests.framework */; };
 		1C2D6E842289595A00743129 /* YSLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D6E832289595A00743129 /* YSLayoutViewController.swift */; };
 		1C2D6E852289595A00743129 /* YSLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D6E832289595A00743129 /* YSLayoutViewController.swift */; };
@@ -38,7 +37,8 @@
 		1C2D6E89228A8DA300743129 /* YSNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D6E87228A8DA300743129 /* YSNetwork.swift */; };
 		1C2D6E8B228AB6AE00743129 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D6E8A228AB6AE00743129 /* image.png */; };
 		1C2D6E8C228AB6AE00743129 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D6E8A228AB6AE00743129 /* image.png */; };
-		A8BE3DDFF85F90C9AA3DD9BA /* Pods_xxxx_Swift_Learning_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2D6E7E22893C3100743129 /* Pods_xxxx_Swift_Learning_Demo.framework */; };
+		A8BE3DDFF85F90C9AA3DD9BA /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		F32A11D1EF72883AAACF6F27 /* Pods_xxxx_Swift_Learning_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5ECB47AC759B7DA6587495 /* Pods_xxxx_Swift_Learning_Demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +73,6 @@
 		1C2D6E762284148400743129 /* YSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YSTableViewCell.swift; sourceTree = "<group>"; };
 		1C2D6E7922851F9E00743129 /* Dictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Dictionary.json; sourceTree = "<group>"; };
 		1C2D6E7C22893C3100743129 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C2D6E7E22893C3100743129 /* Pods_xxxx_Swift_Learning_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_xxxx_Swift_Learning_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C2D6E8022893C3100743129 /* Pods_xxxx_Swift_Learning_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_xxxx_Swift_Learning_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C2D6E832289595A00743129 /* YSLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YSLayoutViewController.swift; sourceTree = "<group>"; };
 		1C2D6E87228A8DA300743129 /* YSNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YSNetwork.swift; sourceTree = "<group>"; };
@@ -98,7 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8BE3DDFF85F90C9AA3DD9BA /* Pods_xxxx_Swift_Learning_Demo.framework in Frameworks */,
+				A8BE3DDFF85F90C9AA3DD9BA /* (null) in Frameworks */,
+				F32A11D1EF72883AAACF6F27 /* Pods_xxxx_Swift_Learning_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +107,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C2D6E7D22893C3100743129 /* ObjectMapper.framework in Frameworks */,
-				1C2D6E7F22893C3100743129 /* Pods_xxxx_Swift_Learning_Demo.framework in Frameworks */,
 				1C2D6E8122893C3100743129 /* Pods_xxxx_Swift_Learning_DemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				1C2D6E7C22893C3100743129 /* ObjectMapper.framework */,
-				1C2D6E7E22893C3100743129 /* Pods_xxxx_Swift_Learning_Demo.framework */,
 				1C2D6E8022893C3100743129 /* Pods_xxxx_Swift_Learning_DemoTests.framework */,
 				8867BD3EF1E54D65E5ABC3FC /* Pods_Swift_Learning_Demo.framework */,
 				F938931E7E2DAC6F89FD1B79 /* Pods_AAAA_Swift_Learning_Demo.framework */,
@@ -260,7 +258,6 @@
 				1C2D6E3222815B5F00743129 /* Frameworks */,
 				1C2D6E3322815B5F00743129 /* Resources */,
 				01A43F202C148118B8564CA8 /* [CP] Embed Pods Frameworks */,
-				E5AC65CAD893AF1F5474FA16 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,7 +277,6 @@
 				1C2D6E4622815B6300743129 /* Frameworks */,
 				1C2D6E4722815B6300743129 /* Resources */,
 				060C9C040038CE7B35987C2A /* [CP] Embed Pods Frameworks */,
-				7278207681466A356A47E357 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -363,17 +359,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-xxxx-Swift-Learning-Demo/Pods-xxxx-Swift-Learning-Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-xxxx-Swift-Learning-Demo/Pods-xxxx-Swift-Learning-Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-xxxx-Swift-Learning-Demo/Pods-xxxx-Swift-Learning-Demo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-xxxx-Swift-Learning-Demo/Pods-xxxx-Swift-Learning-Demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		060C9C040038CE7B35987C2A /* [CP] Embed Pods Frameworks */ = {
@@ -382,17 +376,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-xxxx-Swift-Learning-DemoTests/Pods-xxxx-Swift-Learning-DemoTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-xxxx-Swift-Learning-DemoTests/Pods-xxxx-Swift-Learning-DemoTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-xxxx-Swift-Learning-DemoTests/Pods-xxxx-Swift-Learning-DemoTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-xxxx-Swift-Learning-DemoTests/Pods-xxxx-Swift-Learning-DemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4033B5DAE65A31552339065A /* [CP] Check Pods Manifest.lock */ = {
@@ -403,15 +395,18 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-xxxx-Swift-Learning-DemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		47597FCFB6B4D76A6DD9DA1F /* [CP] Check Pods Manifest.lock */ = {
@@ -422,53 +417,18 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-xxxx-Swift-Learning-Demo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		7278207681466A356A47E357 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-xxxx-Swift-Learning-DemoTests/Pods-xxxx-Swift-Learning-DemoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5AC65CAD893AF1F5474FA16 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-xxxx-Swift-Learning-Demo/Pods-xxxx-Swift-Learning-Demo-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -695,7 +655,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C84C8DD4972C4187BD5B928 /* Pods-xxxx-Swift-Learning-DemoTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N38YRW4D2Q;
@@ -717,7 +676,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A5340EAAE4CED82147C8101E /* Pods-xxxx-Swift-Learning-DemoTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N38YRW4D2Q;

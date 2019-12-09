@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController,YSListViewDelegate {
 
+    var didSetupConstraints = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Swift"
@@ -21,9 +24,19 @@ class ViewController: UIViewController,YSListViewDelegate {
         self.view.addSubview(self.listView)
     }
     
+    override func updateViewConstraints() {
+        if !didSetupConstraints {
+            listView.snp_makeConstraints { (maker) in
+                maker.edges.equalToSuperview()
+            }
+            didSetupConstraints = true
+        }
+        super.updateViewConstraints()
+    }
+    
     // MARK: - 懒加载
     lazy var listView : YSListView = {
-        let view = YSListView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+        let view = YSListView()
         view.backgroundColor = UIColor.green;
 //        view.delegate = self
         view.layoutBlock = {
