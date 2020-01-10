@@ -9,19 +9,14 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController,YSListViewDelegate {
+class ViewController: BaseViewController,YSListViewDelegate {
 
     var didSetupConstraints = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Swift"
-        
-        //导航栏问题
-        self.edgesForExtendedLayout = UIRectEdge.init();
-        self.navigationController?.navigationBar.isTranslucent = false
-        
-        self.view.addSubview(self.listView)
+        title = "Swift"
+        view.addSubview(self.listView)
     }
     
     override func updateViewConstraints() {
@@ -37,7 +32,7 @@ class ViewController: UIViewController,YSListViewDelegate {
     // MARK: - 懒加载
     lazy var listView : YSListView = {
         let view = YSListView()
-        view.backgroundColor = UIColor.green;
+        view.backgroundColor = UIColor.green
 //        view.delegate = self
         view.layoutBlock = {
             self.turnToLayoutView()
@@ -47,8 +42,7 @@ class ViewController: UIViewController,YSListViewDelegate {
     
     // MARK: - YSListViewDelegate
     func turnToLayoutView() {
-        print("跳转自动布局")
-        self.navigationController?.pushViewController(YSLayoutViewController(), animated: true)
+        navigationController?.pushViewController(YSLayoutViewController(), animated: true)
     }
 }
 

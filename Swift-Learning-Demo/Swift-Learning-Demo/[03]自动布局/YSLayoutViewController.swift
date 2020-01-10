@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class YSLayoutViewController: UIViewController {
+class YSLayoutViewController: BaseViewController {
     
     var didSetupConstraints = false
     
@@ -60,12 +60,8 @@ class YSLayoutViewController: UIViewController {
         return view
     }()
     
-    deinit {
-        print("\(NSStringFromClass(self.classForCoder))释放了。。。")
-    }
-    
     override func viewDidLoad() {
-        self.view.backgroundColor = UIColor.white
+        super.viewDidLoad()
         
         scrollView.addSubview(blackView)
         blackView.addSubview(whiteView)
@@ -174,10 +170,7 @@ class YSLayoutViewController: UIViewController {
    func constraints() {
     
        scrollView.snp_makeConstraints { (maker) in
-            maker.top.equalTo(topLayoutGuide.snp.bottom)
-            maker.bottom.equalTo(bottomLayoutGuide.snp.top)
-            maker.width.equalTo(view)
-//           maker.edges.equalToSuperview()
+           maker.edges.equalToSuperview()
        }
        
        blackView.snp_makeConstraints { (maker) in

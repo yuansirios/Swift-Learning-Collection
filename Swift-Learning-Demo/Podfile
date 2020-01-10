@@ -8,6 +8,9 @@ abstract_target 'xxxx' do
     pod 'SnapKit'
     pod 'Alamofire'
     
+    pod 'SwiftyJSON', '~> 5.0.0'
+    pod 'HandyJSON', '~> 5.0.0'
+    
     target 'Swift-Learning-Demo' do
         
     end

@@ -37,6 +37,10 @@
 		1C2D6E89228A8DA300743129 /* YSNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D6E87228A8DA300743129 /* YSNetwork.swift */; };
 		1C2D6E8B228AB6AE00743129 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D6E8A228AB6AE00743129 /* image.png */; };
 		1C2D6E8C228AB6AE00743129 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D6E8A228AB6AE00743129 /* image.png */; };
+		1CC5D4A823C809580061B65C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5D4A723C809580061B65C /* UIColor+Extension.swift */; };
+		1CC5D4A923C809580061B65C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5D4A723C809580061B65C /* UIColor+Extension.swift */; };
+		1CC5D4AC23C80A000061B65C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5D4AB23C80A000061B65C /* BaseViewController.swift */; };
+		1CC5D4AD23C80A000061B65C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5D4AB23C80A000061B65C /* BaseViewController.swift */; };
 		A8BE3DDFF85F90C9AA3DD9BA /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		F32A11D1EF72883AAACF6F27 /* Pods_xxxx_Swift_Learning_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5ECB47AC759B7DA6587495 /* Pods_xxxx_Swift_Learning_Demo.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +81,8 @@
 		1C2D6E832289595A00743129 /* YSLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YSLayoutViewController.swift; sourceTree = "<group>"; };
 		1C2D6E87228A8DA300743129 /* YSNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YSNetwork.swift; sourceTree = "<group>"; };
 		1C2D6E8A228AB6AE00743129 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		1CC5D4A723C809580061B65C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		1CC5D4AB23C80A000061B65C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		475B8A3D4081EC5F854E18C2 /* Pods-AAAA-Swift-Learning-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAAA-Swift-Learning-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAAA-Swift-Learning-Demo/Pods-AAAA-Swift-Learning-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		8867BD3EF1E54D65E5ABC3FC /* Pods_Swift_Learning_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Learning_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C84C8DD4972C4187BD5B928 /* Pods-xxxx-Swift-Learning-DemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xxxx-Swift-Learning-DemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xxxx-Swift-Learning-DemoTests/Pods-xxxx-Swift-Learning-DemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,7 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				1C2D6E3822815B5F00743129 /* AppDelegate.swift */,
-				1C2D6E3A22815B5F00743129 /* ViewController.swift */,
+				1CC5D4AA23C809EF0061B65C /* Base */,
+				1CC5D4AE23C80A070061B65C /* Controller */,
+				1CC5D4A623C809260061B65C /* Category */,
 				1C2D6E6E2282C06500743129 /* API */,
 				1C2D6E5822815C2100743129 /* [01]创建对象 */,
 				1C2D6E652282AB1F00743129 /* [02]列表和布局 */,
@@ -230,6 +238,30 @@
 				1C2D6E87228A8DA300743129 /* YSNetwork.swift */,
 			);
 			path = "[04]网络请求";
+			sourceTree = "<group>";
+		};
+		1CC5D4A623C809260061B65C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1CC5D4A723C809580061B65C /* UIColor+Extension.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1CC5D4AA23C809EF0061B65C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1CC5D4AB23C80A000061B65C /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		1CC5D4AE23C80A070061B65C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1C2D6E3A22815B5F00743129 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		6E97121B91578744295EC58F /* Frameworks */ = {
@@ -441,7 +473,9 @@
 				1C2D6E672282AC0C00743129 /* YSListView.swift in Sources */,
 				1C2D6E3B22815B5F00743129 /* ViewController.swift in Sources */,
 				1C2D6E5A22815C3900743129 /* People.swift in Sources */,
+				1CC5D4A823C809580061B65C /* UIColor+Extension.swift in Sources */,
 				1C2D6E842289595A00743129 /* YSLayoutViewController.swift in Sources */,
+				1CC5D4AC23C80A000061B65C /* BaseViewController.swift in Sources */,
 				1C2D6E712282C07C00743129 /* YSTool.swift in Sources */,
 				1C2D6E622282A8B100743129 /* ObjTest.swift in Sources */,
 				1C2D6E88228A8DA300743129 /* YSNetwork.swift in Sources */,
@@ -457,6 +491,7 @@
 			files = (
 				1C2D6E5B22815C3900743129 /* People.swift in Sources */,
 				1C2D6E5E2281629200743129 /* Student.swift in Sources */,
+				1CC5D4AD23C80A000061B65C /* BaseViewController.swift in Sources */,
 				1C2D6E852289595A00743129 /* YSLayoutViewController.swift in Sources */,
 				1C2D6E782284148400743129 /* YSTableViewCell.swift in Sources */,
 				1C2D6E4E22815B6300743129 /* Swift_Learning_DemoTests.swift in Sources */,
@@ -464,6 +499,7 @@
 				1C2D6E682282AC0C00743129 /* YSListView.swift in Sources */,
 				1C2D6E632282A8B100743129 /* ObjTest.swift in Sources */,
 				1C2D6E722282C07C00743129 /* YSTool.swift in Sources */,
+				1CC5D4A923C809580061B65C /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,6 +37,11 @@ class YSNetwork: NSObject {
      */
     static let shareNetwork = YSNetwork()
     
+    var sharedSessionManager: Alamofire.SessionManager = {
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 10//请求超时时间
+        return Alamofire.SessionManager(configuration: configuration)
+    }()
 }
 
 extension YSNetwork {
@@ -77,6 +82,7 @@ extension YSNetwork {
             print("error:\(error)")
         }
     }
+    
     /**
      GET 请求
      - parameter urlString:  请求URL
@@ -85,7 +91,7 @@ extension YSNetwork {
      - parameter failure:    失败回调
      */
     func GET(urlString: String ,parameters: [String : AnyObject]? ,success: @escaping NetworkSuccess, failure: @escaping NetworkFailure){
-        Alamofire.request(urlString,
+        self.sharedSessionManager.request(urlString,
                           method: .get,
                           parameters: parameters,
                           encoding: URLEncoding.default,
@@ -107,8 +113,7 @@ extension YSNetwork {
      - parameter failure:    失败回调
      */
     func POST(urlString: String ,parameters: [String : AnyObject]? ,success: @escaping NetworkSuccess, failure: @escaping NetworkFailure) {
-        
-        Alamofire.request(urlString,
+        self.sharedSessionManager.request(urlString,
                           method: .post,
                           parameters: parameters,
                           encoding: URLEncoding.default,
@@ -134,7 +139,7 @@ extension YSNetwork {
      */
     func upload(urlString: String ,fileData:Data ,uploadProgress:@escaping UploadProgress, success: @escaping NetworkSuccess, failure: @escaping NetworkFailure){
         
-        Alamofire.upload(fileData, to: urlString, method: .post, headers: ["token":"8F51FC301B8899940EF07823031B7ED6"])
+        self.sharedSessionManager.upload(fileData, to: urlString, method: .post, headers: ["token":"8F51FC301B8899940EF07823031B7ED6"])
             .uploadProgress { (Progress) in
                 print("上传进度：\(Progress)"); uploadProgress(Progress.fractionCompleted,Progress.completedUnitCount,Progress.totalUnitCount)
             }
@@ -161,7 +166,7 @@ extension YSNetwork {
     func download(urlString: String ,savePathURL:NSURL ,downloadProgress: @escaping DownloadProgress, success: @escaping NetworkSuccess, failure: @escaping NetworkFailure){}
 //
 //
-////        Alamofire.download(urlString, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil) { (url, response) in
+//        self.sharedSessionManager.download(urlString, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil) { (url, response) in
 //        Alamofire.download(urlString)
 //
 //

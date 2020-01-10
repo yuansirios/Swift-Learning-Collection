@@ -1,8 +1,17 @@
 [
     {
+        "B_id":"Bid:123",
+        "B":{
+            "event":"B_event"
+        },
         "title":"【1】创建对象",
         "subTitle":"初始化，继承，函数调用等操作",
-        "event":"event"
+        "event":"event",
+        "sub":{
+            "title":"【1-1】创建对象",
+            "subTitle":"初始化，继承，函数调用等操作",
+            "event":"event"
+        }
     },
     {
         "title":"【2】对象、模型转换",
