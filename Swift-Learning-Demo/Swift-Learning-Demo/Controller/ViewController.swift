@@ -33,7 +33,7 @@ class ViewController: BaseViewController,YSListViewDelegate {
     lazy var listView : YSListView = {
         let view = YSListView()
         view.backgroundColor = UIColor.green
-//        view.delegate = self
+        view.delegate = self
         view.layoutBlock = {
             self.turnToLayoutView()
         }
@@ -43,6 +43,10 @@ class ViewController: BaseViewController,YSListViewDelegate {
     // MARK: - YSListViewDelegate
     func turnToLayoutView() {
         navigationController?.pushViewController(YSLayoutViewController(), animated: true)
+    }
+    
+    func turnToLeetCode() {
+        navigationController?.pushViewController(LeetCodeViewController(), animated: true)
     }
 }
 

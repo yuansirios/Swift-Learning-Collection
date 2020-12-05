@@ -41,6 +41,9 @@
 		1CC5D4A923C809580061B65C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5D4A723C809580061B65C /* UIColor+Extension.swift */; };
 		1CC5D4AC23C80A000061B65C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5D4AB23C80A000061B65C /* BaseViewController.swift */; };
 		1CC5D4AD23C80A000061B65C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5D4AB23C80A000061B65C /* BaseViewController.swift */; };
+		1CD36A10257B5F6C00DEF996 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD36A0F257B5F6C00DEF996 /* Solution.swift */; };
+		1CF4EB3D2579DCE10017CFC0 /* leetCode.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CF4EB3C2579DCE10017CFC0 /* leetCode.json */; };
+		1CF4EB432579DD8E0017CFC0 /* LeetCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF4EB422579DD8E0017CFC0 /* LeetCodeViewController.swift */; };
 		A8BE3DDFF85F90C9AA3DD9BA /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		F32A11D1EF72883AAACF6F27 /* Pods_xxxx_Swift_Learning_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5ECB47AC759B7DA6587495 /* Pods_xxxx_Swift_Learning_Demo.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +86,9 @@
 		1C2D6E8A228AB6AE00743129 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		1CC5D4A723C809580061B65C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1CC5D4AB23C80A000061B65C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1CD36A0F257B5F6C00DEF996 /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
+		1CF4EB3C2579DCE10017CFC0 /* leetCode.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = leetCode.json; sourceTree = "<group>"; };
+		1CF4EB422579DD8E0017CFC0 /* LeetCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCodeViewController.swift; sourceTree = "<group>"; };
 		475B8A3D4081EC5F854E18C2 /* Pods-AAAA-Swift-Learning-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAAA-Swift-Learning-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAAA-Swift-Learning-Demo/Pods-AAAA-Swift-Learning-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		8867BD3EF1E54D65E5ABC3FC /* Pods_Swift_Learning_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Learning_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C84C8DD4972C4187BD5B928 /* Pods-xxxx-Swift-Learning-DemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xxxx-Swift-Learning-DemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xxxx-Swift-Learning-DemoTests/Pods-xxxx-Swift-Learning-DemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 				1C2D6E652282AB1F00743129 /* [02]列表和布局 */,
 				1C2D6E82228955A500743129 /* [03]自动布局 */,
 				1C2D6E86228A8D6800743129 /* [04]网络请求 */,
+				1CF4EB3B2579DC950017CFC0 /* [05]Leetcode */,
 				1C2D6E3C22815B5F00743129 /* Main.storyboard */,
 				1C2D6E3F22815B6200743129 /* Assets.xcassets */,
 				1C2D6E4122815B6200743129 /* LaunchScreen.storyboard */,
@@ -262,6 +269,16 @@
 				1C2D6E3A22815B5F00743129 /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		1CF4EB3B2579DC950017CFC0 /* [05]Leetcode */ = {
+			isa = PBXGroup;
+			children = (
+				1CF4EB3C2579DCE10017CFC0 /* leetCode.json */,
+				1CD36A0F257B5F6C00DEF996 /* Solution.swift */,
+				1CF4EB422579DD8E0017CFC0 /* LeetCodeViewController.swift */,
+			);
+			path = "[05]Leetcode";
 			sourceTree = "<group>";
 		};
 		6E97121B91578744295EC58F /* Frameworks */ = {
@@ -364,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C2D6E4322815B6200743129 /* LaunchScreen.storyboard in Resources */,
+				1CF4EB3D2579DCE10017CFC0 /* leetCode.json in Resources */,
 				1C2D6E4022815B6200743129 /* Assets.xcassets in Resources */,
 				1C2D6E3E22815B5F00743129 /* Main.storyboard in Resources */,
 				1C2D6E742282C24200743129 /* Array.json in Resources */,
@@ -476,11 +494,13 @@
 				1CC5D4A823C809580061B65C /* UIColor+Extension.swift in Sources */,
 				1C2D6E842289595A00743129 /* YSLayoutViewController.swift in Sources */,
 				1CC5D4AC23C80A000061B65C /* BaseViewController.swift in Sources */,
+				1CD36A10257B5F6C00DEF996 /* Solution.swift in Sources */,
 				1C2D6E712282C07C00743129 /* YSTool.swift in Sources */,
 				1C2D6E622282A8B100743129 /* ObjTest.swift in Sources */,
 				1C2D6E88228A8DA300743129 /* YSNetwork.swift in Sources */,
 				1C2D6E3922815B5F00743129 /* AppDelegate.swift in Sources */,
 				1C2D6E5D2281629200743129 /* Student.swift in Sources */,
+				1CF4EB432579DD8E0017CFC0 /* LeetCodeViewController.swift in Sources */,
 				1C2D6E772284148400743129 /* YSTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

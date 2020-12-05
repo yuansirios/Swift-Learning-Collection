@@ -52,6 +52,7 @@ private let cellIdentifier = "cellIdentifier"
 protocol YSListViewDelegate {
     //代理方法
     func turnToLayoutView()
+    func turnToLeetCode()
 }
 
 class YSListView : UIView{
@@ -167,15 +168,21 @@ class YSListView : UIView{
             delegate?.turnToLayoutView()
         }
         
-        if let _ = layoutBlock{
-            layoutBlock()
-        }
+//        if let _ = layoutBlock{
+//            layoutBlock()
+//        }
     }
     
     @objc func event4(){
 //        YSNetwork().testGetRequest()
 //        YSNetwork().testPostRequest()
         YSNetwork().testUploadFile()
+    }
+    
+    @objc func event5(){
+        if delegate != nil {
+            delegate?.turnToLeetCode()
+        }
     }
     
     // MARK: - *********** 懒加载 ***********

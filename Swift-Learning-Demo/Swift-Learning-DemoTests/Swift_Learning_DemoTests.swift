@@ -18,6 +18,13 @@ class Swift_Learning_DemoTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testSolution() {
+        let nums = [2, 7, 11, 15]
+        let taget = 9
+        let arr = Solution().twoSum(nums, taget);
+        print("twoSum的结果是\(arr)");
+    }
 
     func testExample() {
         ObjTest().showInfo()
