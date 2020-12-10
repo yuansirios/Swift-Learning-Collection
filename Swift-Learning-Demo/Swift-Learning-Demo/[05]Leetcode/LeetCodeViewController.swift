@@ -63,6 +63,13 @@ class LeetCodeViewController: BaseViewController{
         let arr = Solution().twoSum(nums, taget);
         print("twoSum的结果是\(arr)");
     }
+    
+    @objc func maxArea(){
+        let arr = [1,8,6,2,5,4,8,3,7]
+        let area = Solution().maxArea(arr);
+        print("最大的面积：\(area)");
+    }
+    
 }
 
 // MARK: - *********** UITableViewDelegate ***********

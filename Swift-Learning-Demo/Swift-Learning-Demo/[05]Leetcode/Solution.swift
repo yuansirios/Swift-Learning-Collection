@@ -47,23 +47,57 @@ class Solution {
         return [];
     }
      
-    // MARK: - *********** 【2】两数相加 难度:中等 ***********
-    /*
-     给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
+    // MARK: - *********** 【11】盛最多水的容器 难度:中等 ***********
+    /**
+     给你 n 个非负整数 a1，a2，...，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
 
-     如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
+     说明：你不能倾斜容器。
+     输入：[1,8,6,2,5,4,8,3,7]
+     输出：49
+     解释：图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。
+     
+     示例 2：
+     输入：height = [1,1]
+     输出：1
+     
+     示例 3：
+     输入：height = [4,3,2,1,4]
+     输出：16
+     
+     示例 4：
+     输入：height = [1,2,1]
+     输出：2
+      
+     提示：
 
-     您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
-
-     示例：
-
-     输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
-     输出：7 -> 0 -> 8
-     原因：342 + 465 = 807
+     n = height.length
+     2 <= n <= 3 * 104
+     0 <= height[i] <= 3 * 104
+     
      */
- 
-    func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
-        return ListNode()
+    func maxArea(_ height: [Int]) -> Int {
+        var max = 0
+        var start = 0
+        var end = height.count - 1
+        
+        while start < end {
+            let width = end - start
+            var high = 0
+            let startH = height[start]
+            let endH = height[end]
+            if  startH < endH {
+                high = height[start]
+                start = start + 1
+            }else{
+                high = height[end]
+                end = end - 1
+            }
+            let temp = width * high
+            if temp > max {
+                max = temp
+            }
+        }
+        return max
     }
 }
 
