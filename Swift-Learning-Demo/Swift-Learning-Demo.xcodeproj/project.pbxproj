@@ -42,6 +42,7 @@
 		1CC5D4AC23C80A000061B65C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5D4AB23C80A000061B65C /* BaseViewController.swift */; };
 		1CC5D4AD23C80A000061B65C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5D4AB23C80A000061B65C /* BaseViewController.swift */; };
 		1CD36A10257B5F6C00DEF996 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD36A0F257B5F6C00DEF996 /* Solution.swift */; };
+		1CD36A24257B831200DEF996 /* ListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD36A23257B831200DEF996 /* ListNode.swift */; };
 		1CF4EB3D2579DCE10017CFC0 /* leetCode.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CF4EB3C2579DCE10017CFC0 /* leetCode.json */; };
 		1CF4EB432579DD8E0017CFC0 /* LeetCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF4EB422579DD8E0017CFC0 /* LeetCodeViewController.swift */; };
 		A8BE3DDFF85F90C9AA3DD9BA /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -87,6 +88,7 @@
 		1CC5D4A723C809580061B65C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1CC5D4AB23C80A000061B65C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1CD36A0F257B5F6C00DEF996 /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
+		1CD36A23257B831200DEF996 /* ListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNode.swift; sourceTree = "<group>"; };
 		1CF4EB3C2579DCE10017CFC0 /* leetCode.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = leetCode.json; sourceTree = "<group>"; };
 		1CF4EB422579DD8E0017CFC0 /* LeetCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCodeViewController.swift; sourceTree = "<group>"; };
 		475B8A3D4081EC5F854E18C2 /* Pods-AAAA-Swift-Learning-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAAA-Swift-Learning-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAAA-Swift-Learning-Demo/Pods-AAAA-Swift-Learning-Demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			children = (
 				1CF4EB3C2579DCE10017CFC0 /* leetCode.json */,
 				1CD36A0F257B5F6C00DEF996 /* Solution.swift */,
+				1CD36A23257B831200DEF996 /* ListNode.swift */,
 				1CF4EB422579DD8E0017CFC0 /* LeetCodeViewController.swift */,
 			);
 			path = "[05]Leetcode";
@@ -499,6 +502,7 @@
 				1C2D6E622282A8B100743129 /* ObjTest.swift in Sources */,
 				1C2D6E88228A8DA300743129 /* YSNetwork.swift in Sources */,
 				1C2D6E3922815B5F00743129 /* AppDelegate.swift in Sources */,
+				1CD36A24257B831200DEF996 /* ListNode.swift in Sources */,
 				1C2D6E5D2281629200743129 /* Student.swift in Sources */,
 				1CF4EB432579DD8E0017CFC0 /* LeetCodeViewController.swift in Sources */,
 				1C2D6E772284148400743129 /* YSTableViewCell.swift in Sources */,

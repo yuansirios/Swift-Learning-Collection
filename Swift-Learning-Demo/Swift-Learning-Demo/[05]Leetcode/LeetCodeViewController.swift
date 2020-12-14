@@ -61,13 +61,33 @@ class LeetCodeViewController: BaseViewController{
         let nums = [2, 7, 11, 15]
         let taget = 9
         let arr = Solution().twoSum(nums, taget);
-        print("twoSum的结果是\(arr)");
+        print("【1】twoSum的结果：\(arr)");
+    }
+    
+    @objc func addTwoNumbers(){
+        let a = ListNode(4,ListNode(3))
+        let oneList = ListNode(2,a)
+        
+        let b = ListNode(6,ListNode(4))
+        let twoList = ListNode(5,b)
+        
+        let threeList = Solution().addTwoNumbers(oneList,twoList)
+        
+        print("【2】两数相加的结果：");
+        printListNode(threeList)
+    }
+    
+    func printListNode(_ head: ListNode?) {
+        if head?.next != nil {
+            printListNode(head?.next)
+        }
+        print(head!.val)
     }
     
     @objc func maxArea(){
         let arr = [1,8,6,2,5,4,8,3,7]
         let area = Solution().maxArea(arr);
-        print("最大的面积：\(area)");
+        print("【11】盛最多水的容器：\(area)");
     }
     
 }

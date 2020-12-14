@@ -3,6 +3,16 @@
         "title":"【1】两数之和",
         "subTitle":"难度：简单",
         "event":"twoSum"
+    },
+    {
+        "title":"【2】两数相加",
+        "subTitle":"难度：中等",
+        "event":"addTwoNumbers"
+    },
+    {
+        "title":"【11】盛最多水的容器",
+        "subTitle":"难度：中等",
+        "event":"maxArea"
     }
 ]
 
