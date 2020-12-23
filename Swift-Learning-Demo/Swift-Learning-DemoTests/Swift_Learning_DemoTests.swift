@@ -20,10 +20,8 @@ class Swift_Learning_DemoTests: XCTestCase {
     }
     
     func testSolution() {
-        let nums = [2, 7, 11, 15]
-        let taget = 9
-        let arr = Solution().twoSum(nums, taget);
-        print("twoSum的结果是\(arr)");
+        let length = Solution().lengthOfLongestSubstring("abcabcbb")
+        print("无重复字符的最长子串 :\(length)")
     }
 
     func testExample() {

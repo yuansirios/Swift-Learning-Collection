@@ -40,13 +40,13 @@ class LeetCodeViewController: BaseViewController{
         let jsonStr = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)
         let dicArr = getArrayFromJSONString(jsonString: jsonStr! as String)
         
-        //数组转模型
-        var modelArr = [YSListModel]()
-        for var item in dicArr{
-            let model =  Mapper<YSListModel>().map(JSON: item as! [String : Any])
-            modelArr.append(model!)
+        var sectionArr = [YSListSectionModel]()
+        for var dic:[String:Any] in dicArr as! Array {
+            let section =  Mapper<YSListSectionModel>().map(JSON: dic)
+            sectionArr.append(section!)
         }
-        return modelArr as NSArray
+        
+        return sectionArr as NSArray
     }()
     
     lazy var tableView : UITableView = {
@@ -57,11 +57,25 @@ class LeetCodeViewController: BaseViewController{
         return table
     }()
     
+    // MARK: - *********** 数组相关 ***********
     @objc func twoSum(){
         let nums = [2, 7, 11, 15]
         let taget = 9
-        let arr = Solution().twoSum(nums, taget);
-        print("【1】twoSum的结果：\(arr)");
+        let arr = ArraySolution().twoSum(nums, taget)
+        print("【1】两数之和：\(arr)");
+    }
+    
+    @objc func removeDuplicates(){
+        var nums = [0,0,1,1,1,2,2,3,3,4]
+        let value = ArraySolution().removeDuplicates(&nums)
+        print("【26】删除排序数组中的重复项：\(value)");
+    }
+    
+    @objc func removeElement(){
+        var nums = [0,0,1,1,1,2,2,3,3,4]
+        let val = 1
+        let result = ArraySolution().removeElement(&nums, val)
+        print("【27】移除元素：\(result)");
     }
     
     @objc func addTwoNumbers(){
@@ -95,7 +109,17 @@ class LeetCodeViewController: BaseViewController{
 // MARK: - *********** UITableViewDelegate ***********
 extension LeetCodeViewController:UITableViewDelegate,UITableViewDataSource{
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let model = self.dataArr[section] as? YSListSectionModel
+        return model?.title
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let model = self.dataArr[section] as? YSListSectionModel
+        return model!.list.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return self.dataArr.count
     }
     
@@ -109,7 +133,8 @@ extension LeetCodeViewController:UITableViewDelegate,UITableViewDataSource{
             cell = YSTableViewCell.init(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: cellIdentifier)
         }
         
-        let model = self.dataArr[indexPath.row] as? YSListModel
+        let section = self.dataArr[indexPath.section] as? YSListSectionModel
+        let model = section?.list[indexPath.row]
         cell?.model = model
         cell?.textLabel?.text = model?.title
         cell?.detailTextLabel?.text = model?.subTitle
@@ -118,7 +143,8 @@ extension LeetCodeViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let model = self.dataArr[indexPath.row] as? YSListModel
+        let section = self.dataArr[indexPath.section] as? YSListSectionModel
+        let model = section?.list[indexPath.row]
         let selector = Selector(model!.event)
         
         if self.responds(to:selector) {

@@ -12,40 +12,6 @@ class Solution {
     init() {
         
     }
-
-    // MARK: - *********** 【1】两数之和 难度:简单 ***********
-    /*
-     给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
-     你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
-     示例:
-     给定 nums = [2, 7, 11, 15], target = 9
-     因为 nums[0] + nums[1] = 2 + 7 = 9
-     所以返回 [0, 1]
-     */
-    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-        var intArr = [Int]();
-        for i in 0..<nums.count {
-            for j in (i+1)..<nums.count {
-                if (nums[i] + nums[j] == target){
-                    intArr = [i,j];
-                }
-            }
-        }
-        return intArr;
-    }
-    
-    //时间复杂度是 O(n)
-    func twoSum2(_ nums: [Int], _ target: Int) -> [Int] {
-        var dic = [Int:Int]()
-        for i in 0..<nums.count {
-            let another = target - nums[i]
-            if dic.keys.contains(another) {
-                return [dic[another]! as Int,i]
-            }
-            dic[nums[i]] = i
-        }
-        return [];
-    }
      
     // MARK: - *********** 【2】两数相加 难度:中等 ***********
     /**
@@ -87,6 +53,62 @@ class Solution {
             }
         }
         return newList;
+    }
+    
+    // MARK: - *********** 【3】无重复字符的最长子串 难度:中等 ***********
+    /**
+     给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+
+     示例 1:
+     输入: s = "abcabcbb"
+     输出: 3
+     解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+     
+     示例 2:
+     输入: s = "bbbbb"
+     输出: 1
+     解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
+     
+     示例 3:
+     输入: s = "pwwkew"
+     输出: 3
+     解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
+          请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
+          
+     示例 4:
+     输入: s = ""
+     输出: 0
+      
+     提示：
+     0 <= s.length <= 5 * 104
+     s 由英文字母、数字、符号和空格组成
+     */
+    func lengthOfLongestSubstring(_ s: String) -> Int {
+        var right = 1
+        var left = 0
+        var i = 0
+        var result = 0
+
+        if s.count > 0 {
+            result = right - left
+            let chars = Array(s.utf8)
+
+            //Interate in a incremental window
+            while right < chars.count {
+                i = left
+                while i < right {
+                    //Check if a duplicate is found
+                    if chars[i] == chars[right] {
+                        left = i + 1
+                        break
+                    }
+                    i = i + 1
+                }
+                result = max(result,right-left+1)
+                right = right + 1
+            }
+        }
+        return result
     }
     
     // MARK: - *********** 【11】盛最多水的容器 难度:中等 ***********

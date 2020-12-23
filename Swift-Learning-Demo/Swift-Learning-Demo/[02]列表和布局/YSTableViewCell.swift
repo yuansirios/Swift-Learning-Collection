@@ -31,9 +31,9 @@ class YSTableViewCell: UITableViewCell {
     
     var model:YSListModel!{
         didSet{
-            print("title:\(model.title!)")
-            print("subTitle:\(model.subTitle!)")
-            print("event:\(model.event!)")
+//            print("title:\(model.title!)")
+//            print("subTitle:\(model.subTitle!)")
+//            print("event:\(model.event!)")
         }
     }
 

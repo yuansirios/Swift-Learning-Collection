@@ -12,6 +12,20 @@ import ObjectMapper
 import SwiftyJSON
 import HandyJSON
 
+struct YSListSectionModel : Mappable {
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        title <- map["title"]
+        list <- map["list"]
+    }
+    
+    var title : String!
+    var list : [YSListModel]!
+}
+
 struct YSListModel : Mappable {
     var title : String!
     var subTitle : String!

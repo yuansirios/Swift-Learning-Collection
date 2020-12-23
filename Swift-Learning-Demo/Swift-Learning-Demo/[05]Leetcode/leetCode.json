@@ -1,18 +1,37 @@
 [
     {
-        "title":"【1】两数之和",
-        "subTitle":"难度：简单",
-        "event":"twoSum"
+        "title":"数组",
+        "list":[
+            {
+                "title":"【1】两数之和",
+                "subTitle":"难度：简单",
+                "event":"twoSum"
+            },
+            {
+                "title":"【26】删除排序数组中的重复项",
+                "subTitle":"难度：简单",
+                "event":"removeDuplicates"
+            },
+            {
+                "title":"【27】移除元素",
+                "subTitle":"难度：简单",
+                "event":"removeElement"
+            }
+        ]
     },
     {
-        "title":"【2】两数相加",
-        "subTitle":"难度：中等",
-        "event":"addTwoNumbers"
-    },
-    {
-        "title":"【11】盛最多水的容器",
-        "subTitle":"难度：中等",
-        "event":"maxArea"
+        "title":"其他",
+        "list":[
+            {
+                "title":"【2】两数相加",
+                "subTitle":"难度：中等",
+                "event":"addTwoNumbers"
+            },
+            {
+                "title":"【11】盛最多水的容器",
+                "subTitle":"难度：中等",
+                "event":"maxArea"
+            }
+        ]
     }
 ]
-
